@@ -1,0 +1,151 @@
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1574px;
+  }
+}
+
+@media (max-width: 1750px) {}
+
+@media (max-width: 1600px) {}
+
+@media (max-width: 1399px) {
+ 
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (min-width: 992px) {}
+
+@media (max-width: 991px) {
+
+}
+
+@media (min-width: 768px) {
+  .progress-line {
+    top: 0;
+    left: 0;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .h2,
+  h2 {
+    font-size: 27px;  
+  }
+
+  .progress-line {
+    width: 0%;
+    height: 100%;
+    transition: width 0.4s ease-in-out;
+  }
+
+
+  .desired-services .service-radio .service-label {
+    font-size: 11px;
+    padding: 10px 5px;
+    height: 114px;
+    width: 113px;
+    line-height: 15PX;
+  }
+
+  .desired-services .service-radio .service-label svg{
+    height: 30px;
+  }
+
+  .company-logos img {
+    width: 100px;
+  }
+  
+}
+
+@media (max-width: 576px) {
+
+  label{
+    font-size: 13px;
+  }
+
+  .dropdown-item{
+    font-size: 14px;
+  }
+
+  .theme-btn,
+  a.theme-btn {
+    font-size: 13px;
+  }
+
+  .desired-services {
+    gap: 10px;
+  }
+
+  .desired-services .service-checkbox .service-label {
+    padding: 7.5px 22px 7.5px 28px;
+    font-size: 13px;
+  } 
+  .desired-services .service-checkbox .service-label:after {
+    top: 9px;
+    left: 8px;
+  }
+  .login-header {
+    margin: 18px 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .multisteup {
+    padding: 28px 0px;
+  }
+
+  .steps .desired-services {
+    gap: 9px;
+  }
+
+  .progress-box {
+    width: calc(100% - 12%);
+  }
+
+  .theme-btn,
+  a.theme-btn {
+    padding: 10.5px 25px;
+  }
+
+  input {
+    padding: 7px 20px;
+  }
+
+  .h2,
+  h2 {
+    font-size: 23px;
+  }
+
+  p {
+    line-height: 25px;
+    font-size: 13px;
+  }
+  .multisteup-box {
+    padding: 17px;
+  }
+
+}
+
+@media (max-width: 399px) {
+  .header-text {
+    display: none;
+  }
+
+  .logo {
+    margin: auto;
+  }
+  .company-logos img{
+    width: 78px;
+  }
+  .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 375px) {
+}

@@ -1,0 +1,39 @@
+:root {
+  /* GLOBAL VARIABLES */
+
+  
+  /*---- Base Color ----*/
+  --primary-color: #008080;
+
+  /*---- Other ----*/
+  --custom-white: #ffffff;
+  --custom-black: #000000;
+  --custom-black1: #0B171D;
+  --custom-yellow: #F7AC16;
+  --custom-green: #0AA47F;
+  --mainly-blue1: #2A424A;
+  --mainly-blue2: #2E3E44;
+  --mainly-blue3: #314045;
+  --pastel-blue1: #B5CBD3 ;
+  --pastel-blue2: #7B959E ;
+
+  /*---- Base Font Family ----*/
+  --base-font: "Barlow", sans-serif;
+
+  /*---- Font Weight ----*/
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+
+  /*---- Heading font size ----*/
+  --h2-size: 35px;
+  --h3-size: 40px;
+  --h4-size: 28px;
+  --h5-size: 24px;
+  --h6-size: 21px;
+
+  /*---- Base font size ----*/
+  --base-size: 15px;
+
+}
