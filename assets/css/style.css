@@ -394,6 +394,11 @@ header {
 
 }
 
+.disbled{
+  pointer-events: none;
+  opacity: 0.6;
+}
+
 label{
   color: #000;
   font-size: 15px;
