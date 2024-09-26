@@ -196,7 +196,7 @@ $(document).ready(function () {
 
         if (serviceSelected.length > 1) {
 
-            stepDataGet('http://127.0.0.1:5500/step.json', 'windows_gutter').then(function (steps) {
+            stepDataGet('https://bhavindabhi72.github.io/rehome/step.json', 'windows_gutter').then(function (steps) {
 
                 let i = 2;
                 for (let x in steps[0]) {
@@ -222,7 +222,7 @@ $(document).ready(function () {
  
             });
         }else{
-            stepDataGet('http://127.0.0.1:5500/step.json', 'common').then(function (steps) {
+            stepDataGet('https://bhavindabhi72.github.io/rehome/step.json', 'common').then(function (steps) {
 
                 let i = 2;
                 for (let x in steps[0]) {
