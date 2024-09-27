@@ -190,13 +190,350 @@ $(document).ready(function () {
             if (serviceSelect[x].value == 'windows' || serviceSelect[x].value == 'gutters') {
                 serviceSelected.push(serviceSelect[x].value);
             }
+            else if (serviceSelect[x].value == 'windows' || serviceSelect[x].value == 'roofing') {
+                serviceSelected.push(serviceSelect[x].value);
+            }
+            else if (serviceSelect[x].value == 'gutters' || serviceSelect[x].value == 'siding') {
+                serviceSelected.push(serviceSelect[x].value);
+            }
+            else if (serviceSelect[x].value == 'bathroom' || serviceSelect[x].value == 'roofing') {
+                serviceSelected.push(serviceSelect[x].value);
+            }
+            else if (serviceSelect[x].value == 'siding' || serviceSelect[x].value == 'roofing') {
+                serviceSelected.push(serviceSelect[x].value);
+            }
+            else if (serviceSelect[x].value == 'gutters' || serviceSelect[x].value == 'bathroom') {
+                serviceSelected.push(serviceSelect[x].value);
+            }
+            else if (serviceSelect[x].value == 'windows' || serviceSelect[x].value == 'bathroom') {
+                serviceSelected.push(serviceSelect[x].value);
+            }
+            else if (serviceSelect[x].value == 'siding' || serviceSelect[x].value == 'bathroom') {
+                serviceSelected.push(serviceSelect[x].value);
+            }
+            else if (serviceSelect[x].value == 'windows' || serviceSelect[x].value == 'siding') {
+                serviceSelected.push(serviceSelect[x].value);
+            }
+            else if (serviceSelect[x].value == 'roofing' || serviceSelect[x].value == 'gutters') {
+                serviceSelected.push(serviceSelect[x].value);
+            }
+            else {
+                serviceSelected.push();
+            }
         }
 
         document.querySelectorAll('.newstep').forEach(e => e.remove())
 
+
+
         if (serviceSelected.length > 1) {
 
-            stepDataGet('https://bhavindabhi72.github.io/rehome/step.json', 'windows_gutter').then(function (steps) {
+            var windowsgutter = ['windows', 'gutters'];
+            let existWindowsGutter = serviceSelected.filter(windows_gutter => windowsgutter.includes(windows_gutter));
+
+            var windowsroofing = ['windows', 'roofing'];
+            let existWindowsRoofing = serviceSelected.filter(windows_gutter => windowsroofing.includes(windows_gutter));
+           
+            var guttersiding = ['gutters', 'siding'];
+            let existGutterSiding = serviceSelected.filter(gutter_siding => guttersiding.includes(gutter_siding));
+
+            var bathroomroofing = ['bathroom', 'roofing'];
+            let existBathroomRoofing = serviceSelected.filter(bathroom_roofing => bathroomroofing.includes(bathroom_roofing));
+            
+            var sidingroofing = ['siding', 'roofing'];
+            let existSidingRoofing = serviceSelected.filter(siding_roofing => sidingroofing.includes(siding_roofing));
+            
+            var gutterbathroom = ['gutters', 'bathroom'];
+            let existGutterBathroom = serviceSelected.filter(gutter_bathroom => gutterbathroom.includes(gutter_bathroom));
+            
+            var windowsbathroom = ['windows', 'bathroom'];
+            let existWindowsBathroom = serviceSelected.filter(windows_bathroom => windowsbathroom.includes(windows_bathroom));
+
+            var sidingbathroom = ['siding', 'bathroom'];
+            let existSidingBathroom = serviceSelected.filter(siding_bathroom => sidingbathroom.includes(siding_bathroom));
+
+            var windowssiding = ['windows', 'siding'];
+            let existWindowsSiding = serviceSelected.filter(windows_siding => windowssiding.includes(windows_siding));
+
+            var roofinggutter = ['roofing', 'gutters'];
+            let existRoofingGutter = serviceSelected.filter(roofing_gutter => roofinggutter.includes(roofing_gutter));
+
+
+            if (existWindowsGutter.length > 1) {
+
+                stepDataGet('http://127.0.0.1:5500/step.json', 'windows_gutter').then(function (steps) {
+
+                    let i = 2;
+                    for (let x in steps[0]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
+                    }
+                    for (let x in steps[1]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
+                    }
+
+                });
+            }else if(existWindowsRoofing.length > 1){
+                stepDataGet('http://127.0.0.1:5500/step.json', 'roofing_windows').then(function (steps) {
+
+                    let i = 2;
+                    for (let x in steps[0]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
+                    }
+                    for (let x in steps[1]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
+                    }
+
+                });
+            }
+            else if(existGutterSiding.length > 1){
+                stepDataGet('http://127.0.0.1:5500/step.json', 'gutter_siding').then(function (steps) {
+
+                    let i = 2;
+                    for (let x in steps[0]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
+                    }
+                    for (let x in steps[1]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
+                    }
+
+                });
+            }
+            else if(existBathroomRoofing.length > 1){
+                stepDataGet('http://127.0.0.1:5500/step.json', 'bathroom_roofing').then(function (steps) {
+
+                    let i = 2;
+                    for (let x in steps[0]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
+                    }
+                    for (let x in steps[1]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
+                    }
+
+                });
+            }
+            else if(existSidingRoofing.length > 1){
+                stepDataGet('http://127.0.0.1:5500/step.json', 'siding_roofing').then(function (steps) {
+
+                    let i = 2;
+                    for (let x in steps[0]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
+                    }
+                    for (let x in steps[1]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
+                    }
+
+                });
+            }
+            else if(existGutterBathroom.length > 1){
+                stepDataGet('http://127.0.0.1:5500/step.json', 'gutter_bathroom').then(function (steps) {
+
+                    let i = 2;
+                    for (let x in steps[0]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
+                    }
+                    for (let x in steps[1]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
+                    }
+
+                });
+            }
+            else if(existWindowsBathroom.length > 1){
+                stepDataGet('http://127.0.0.1:5500/step.json', 'windows_bathroom').then(function (steps) {
+
+                    let i = 2;
+                    for (let x in steps[0]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
+                    }
+                    for (let x in steps[1]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
+                    }
+
+                });
+            }
+            else if(existSidingBathroom.length > 1){
+                stepDataGet('http://127.0.0.1:5500/step.json', 'siding_bathroom').then(function (steps) {
+
+                    let i = 2;
+                    for (let x in steps[0]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
+                    }
+                    for (let x in steps[1]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
+                    }
+
+                });
+            }
+            else if(existWindowsSiding.length > 1){
+                stepDataGet('http://127.0.0.1:5500/step.json', 'window_siding').then(function (steps) {
+
+                    let i = 2;
+                    for (let x in steps[0]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
+                    }
+                    for (let x in steps[1]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
+                    }
+
+                });
+            }
+            else if(existRoofingGutter.length > 1){
+                stepDataGet('http://127.0.0.1:5500/step.json', 'roofing_gutter').then(function (steps) {
+
+                    let i = 2;
+                    for (let x in steps[0]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
+                    }
+                    for (let x in steps[1]) {
+
+                        if (i < 2) {
+                            var h2 = document.querySelectorAll('.steps.step-2')[0];
+                        } else {
+                            var h2 = document.querySelectorAll('.steps.step-' + i)[0];
+                        }
+                        i++;
+                        h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
+                    }
+
+                });
+            }
+            else{
+
+            }
+        } else {
+            stepDataGet('http://127.0.0.1:5500/step.json', 'common').then(function (steps) {
 
                 let i = 2;
                 for (let x in steps[0]) {
@@ -209,7 +546,7 @@ $(document).ready(function () {
                     i++;
                     h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
                 }
-                 for (let x in steps[1]) {
+                for (let x in steps[1]) {
 
                     if (i < 2) {
                         var h2 = document.querySelectorAll('.steps.step-2')[0];
@@ -219,36 +556,12 @@ $(document).ready(function () {
                     i++;
                     h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
                 }
- 
-            });
-        }else{
-            stepDataGet('https://bhavindabhi72.github.io/rehome/step.json', 'common').then(function (steps) {
 
-                let i = 2;
-                for (let x in steps[0]) {
-
-                    if (i < 2) {
-                        var h2 = document.querySelectorAll('.steps.step-2')[0];
-                    } else {
-                        var h2 = document.querySelectorAll('.steps.step-' + i)[0];
-                    }
-                    i++;
-                    h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[0][x] + '</section>');
-                }
-                 for (let x in steps[1]) {
-
-                    if (i < 2) {
-                        var h2 = document.querySelectorAll('.steps.step-2')[0];
-                    } else {
-                        var h2 = document.querySelectorAll('.steps.step-' + i)[0];
-                    }
-                    i++;
-                    h2.insertAdjacentHTML("afterend", '<section class="steps step-' + i + ' newstep">' + steps[1][x] + '</section>');
-                }
- 
                 selectMultiOption();
             });
         }
+
+
     });
 });
 
@@ -270,6 +583,42 @@ async function stepDataGet(url, unikey) {
     var steps = [];
     if (unikey == 'windows_gutter') {
         steps.push(jsonvale.windows_gutter[0]);
+        steps.push(jsonvale.form[0]);
+    }
+    else if (unikey == 'roofing_windows') {
+        steps.push(jsonvale.roofing_windows[0]);
+        steps.push(jsonvale.form[0]);
+    }
+    else if (unikey == 'gutter_siding') {
+        steps.push(jsonvale.gutter_siding[0]);
+        steps.push(jsonvale.form[0]);
+    }
+    else if (unikey == 'bathroom_roofing') {
+        steps.push(jsonvale.bathroom_roofing[0]);
+        steps.push(jsonvale.form[0]);
+    }
+    else if (unikey == 'siding_roofing') {
+        steps.push(jsonvale.siding_roofing[0]);
+        steps.push(jsonvale.form[0]);
+    }
+    else if (unikey == 'gutter_bathroom') {
+        steps.push(jsonvale.gutter_bathroom[0]);
+        steps.push(jsonvale.form[0]);
+    }
+    else if (unikey == 'windows_bathroom') {
+        steps.push(jsonvale.windows_bathroom[0]);
+        steps.push(jsonvale.form[0]);
+    }
+    else if (unikey == 'siding_bathroom') {
+        steps.push(jsonvale.siding_bathroom[0]);
+        steps.push(jsonvale.form[0]);
+    }
+    else if (unikey == 'window_siding') {
+        steps.push(jsonvale.window_siding[0]);
+        steps.push(jsonvale.form[0]);
+    }
+    else if (unikey == 'roofing_gutter') {
+        steps.push(jsonvale.roofing_gutter[0]);
         steps.push(jsonvale.form[0]);
     }
     else {
