@@ -261,7 +261,7 @@ $(document).ready(function () {
 
             if (existWindowsGutter.length > 1) {
 
-                stepDataGet('http://127.0.0.1:5500/step.json', 'windows_gutter').then(function (steps) {
+                stepDataGet(window.location.href+'/step.json', 'windows_gutter').then(function (steps) {
 
                     let i = 2;
                     for (let x in steps[0]) {
@@ -287,7 +287,7 @@ $(document).ready(function () {
 
                 });
             }else if(existWindowsRoofing.length > 1){
-                stepDataGet('http://127.0.0.1:5500/step.json', 'roofing_windows').then(function (steps) {
+                stepDataGet(window.location.href+'/step.json', 'roofing_windows').then(function (steps) {
 
                     let i = 2;
                     for (let x in steps[0]) {
@@ -314,7 +314,7 @@ $(document).ready(function () {
                 });
             }
             else if(existGutterSiding.length > 1){
-                stepDataGet('http://127.0.0.1:5500/step.json', 'gutter_siding').then(function (steps) {
+                stepDataGet(window.location.href+'/step.json', 'gutter_siding').then(function (steps) {
 
                     let i = 2;
                     for (let x in steps[0]) {
@@ -341,7 +341,7 @@ $(document).ready(function () {
                 });
             }
             else if(existBathroomRoofing.length > 1){
-                stepDataGet('http://127.0.0.1:5500/step.json', 'bathroom_roofing').then(function (steps) {
+                stepDataGet(window.location.href+'/step.json', 'bathroom_roofing').then(function (steps) {
 
                     let i = 2;
                     for (let x in steps[0]) {
@@ -368,7 +368,7 @@ $(document).ready(function () {
                 });
             }
             else if(existSidingRoofing.length > 1){
-                stepDataGet('http://127.0.0.1:5500/step.json', 'siding_roofing').then(function (steps) {
+                stepDataGet(window.location.href+'/step.json', 'siding_roofing').then(function (steps) {
 
                     let i = 2;
                     for (let x in steps[0]) {
@@ -395,7 +395,7 @@ $(document).ready(function () {
                 });
             }
             else if(existGutterBathroom.length > 1){
-                stepDataGet('http://127.0.0.1:5500/step.json', 'gutter_bathroom').then(function (steps) {
+                stepDataGet(window.location.href+'/step.json', 'gutter_bathroom').then(function (steps) {
 
                     let i = 2;
                     for (let x in steps[0]) {
@@ -422,7 +422,7 @@ $(document).ready(function () {
                 });
             }
             else if(existWindowsBathroom.length > 1){
-                stepDataGet('http://127.0.0.1:5500/step.json', 'windows_bathroom').then(function (steps) {
+                stepDataGet(window.location.href+'/step.json', 'windows_bathroom').then(function (steps) {
 
                     let i = 2;
                     for (let x in steps[0]) {
@@ -449,7 +449,7 @@ $(document).ready(function () {
                 });
             }
             else if(existSidingBathroom.length > 1){
-                stepDataGet('http://127.0.0.1:5500/step.json', 'siding_bathroom').then(function (steps) {
+                stepDataGet(window.location.href+'/step.json', 'siding_bathroom').then(function (steps) {
 
                     let i = 2;
                     for (let x in steps[0]) {
@@ -476,7 +476,7 @@ $(document).ready(function () {
                 });
             }
             else if(existWindowsSiding.length > 1){
-                stepDataGet('http://127.0.0.1:5500/step.json', 'window_siding').then(function (steps) {
+                stepDataGet(window.location.href+'/step.json', 'window_siding').then(function (steps) {
 
                     let i = 2;
                     for (let x in steps[0]) {
@@ -503,7 +503,7 @@ $(document).ready(function () {
                 });
             }
             else if(existRoofingGutter.length > 1){
-                stepDataGet('http://127.0.0.1:5500/step.json', 'roofing_gutter').then(function (steps) {
+                stepDataGet(window.location.href+'/step.json', 'roofing_gutter').then(function (steps) {
 
                     let i = 2;
                     for (let x in steps[0]) {
@@ -533,7 +533,7 @@ $(document).ready(function () {
 
             }
         } else {
-            stepDataGet('http://127.0.0.1:5500/step.json', 'common').then(function (steps) {
+            stepDataGet(window.location.href+'/step.json', 'common').then(function (steps) {
 
                 let i = 2;
                 for (let x in steps[0]) {
